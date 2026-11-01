@@ -4,7 +4,7 @@ menu.innerHTML = "";
 for (let i = 0; i < myDishes.length; i++) {
   const dish = myDishes[i];
   const price = dish.price.toFixed(2).replace(".", ",");
-  console.log(i);
+
   menu.innerHTML += `
   <article>
     <div>
