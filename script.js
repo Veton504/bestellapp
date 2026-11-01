@@ -1,8 +1,11 @@
 const menu = document.getElementById("menu");
-const dish = myDishes[0];
-const price = dish.price.toFixed(2).replace(".", ",");
+menu.innerHTML = "";
 
-menu.innerHTML = `
+for (let i = 0; i < myDishes.length; i++) {
+  const dish = myDishes[i];
+  const price = dish.price.toFixed(2).replace(".", ",");
+  console.log(i);
+  menu.innerHTML += `
   <article>
     <div>
       <h3>${dish.name}</h3>
@@ -12,3 +15,4 @@ menu.innerHTML = `
     <button>+</button>
   </article>
 `;
+}
