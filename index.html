@@ -3,11 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    
     <title>Bestell App</title>
   </head>
   <body>
     <header>
-      <span>Bestell App</span>
+      <span class="logo">Bestell App</span>
     </header>
     <section>
       <h1>Paradise Noodles</h1>
@@ -16,12 +18,19 @@
       <p>Lieferkosten 5,00 € | Mindestbestellwert 10,00 €</p>
     </section>
     <main id="menu">
-    <h2>Hauptgerichte</h2>
-    <article>
-      <h3>Pad Thai</h3>
-      <span>12,90</span>
-    </article>
+      <h2>Hauptgerichte</h2>
+      <article>
+        <div>
+        <h3>Pad Thai</h3>
+
+        <p>Reisnudeln mit Garnelen, Ei und Erdnüssen</p>
+        <span class="price">12,90 €</span>
+        </div>
+        <button>+</button>
+      </article>
     </main>
     <footer>© 2026 Paradise Noodles</footer>
+    <script src="dishes.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: orange;
+  color: white;
+  padding: 16px;
+}
+
+article {
+  border: 1px solid gray;
+  padding: 16px;
+  margin: 16px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.price {
+  color: orange;
+  font-weight: bold;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
