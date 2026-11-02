@@ -7,7 +7,7 @@ for (let i = 0; i < myDishes.length; i++) {
   const price = dish.price.toFixed(2).replace(".", ",");
 
   menu.innerHTML += `
- x
+ 
 
   <article>
     <div>
@@ -29,5 +29,19 @@ function addToBasket(index) {
   } else {
     basket.push({ name: dish.name, price: dish.price, amount: 1 });
   }
-  console.log(basket);
+  renderBasket();
+}
+
+function renderBasket() {
+  const container = document.getElementById("basketItems");
+  container.innerHTML = "";
+  let total = 0;
+
+  for (let i = 0; i < basket.length; i++) {
+    const item = basket[i];
+    const sum = (item.price * item.amount).toFixed(2).replace(".", ",");
+    container.innerHTML += `<p>${item.amount}x ${item.name} ${sum} €</p>`;
+    total += item.price * item.amount;
+  }
+  container.innerHTML += `<p>Gesamt: ${total.toFixed(2).replace(".", ",")} €</p>`;
 }
