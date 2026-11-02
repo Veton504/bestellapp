@@ -1,12 +1,14 @@
 const menu = document.getElementById("menu");
 menu.innerHTML = "";
 const basket = [];
+const deliveryFee = 5;
 
 for (let i = 0; i < myDishes.length; i++) {
   const dish = myDishes[i];
   const price = dish.price.toFixed(2).replace(".", ",");
 
   menu.innerHTML += `
+ 
  
 
   <article>
@@ -43,5 +45,6 @@ function renderBasket() {
     container.innerHTML += `<p>${item.amount}x ${item.name} ${sum} €</p>`;
     total += item.price * item.amount;
   }
-  container.innerHTML += `<p>Gesamt: ${total.toFixed(2).replace(".", ",")} €</p>`;
+  container.innerHTML += `<p>Lieferkosten: ${deliveryFee.toFixed(2).replace(".", ",")} €</p>`;
+  container.innerHTML += `<p>Gesamt: ${(total + deliveryFee).toFixed(2).replace(".", ",")} €</p>`;
 }
