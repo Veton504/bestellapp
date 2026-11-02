@@ -1,5 +1,6 @@
 const menu = document.getElementById("menu");
 menu.innerHTML = "";
+
 const basket = [];
 const deliveryFee = 5;
 
@@ -37,14 +38,26 @@ function addToBasket(index) {
 function renderBasket() {
   const container = document.getElementById("basketItems");
   container.innerHTML = "";
+  if (basket.length === 0) {
+    container.innerHTML = "<p>Dein Warenkorb ist leer.</p>";
+    return;
+  }
   let total = 0;
 
   for (let i = 0; i < basket.length; i++) {
     const item = basket[i];
     const sum = (item.price * item.amount).toFixed(2).replace(".", ",");
-    container.innerHTML += `<p>${item.amount}x ${item.name} ${sum} €</p>`;
+    container.innerHTML += `<p>${item.amount}x ${item.name} ${sum} € <button onclick="changeAmount(${i}, -1)">-</button> <button onclick="changeAmount(${i}, 1)">+</button> </p>`;
     total += item.price * item.amount;
   }
   container.innerHTML += `<p>Lieferkosten: ${deliveryFee.toFixed(2).replace(".", ",")} €</p>`;
   container.innerHTML += `<p>Gesamt: ${(total + deliveryFee).toFixed(2).replace(".", ",")} €</p>`;
+}
+
+function changeAmount(index, change) {
+  basket[index].amount += change;
+  if (basket[index].amount < 1) {
+    basket.splice(index, 1);
+  }
+  renderBasket();
 }
