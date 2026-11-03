@@ -52,6 +52,7 @@ function renderBasket() {
   }
   container.innerHTML += `<p>Lieferkosten: ${deliveryFee.toFixed(2).replace(".", ",")} €</p>`;
   container.innerHTML += `<p>Gesamt: ${(total + deliveryFee).toFixed(2).replace(".", ",")} €</p>`;
+  container.innerHTML += `<button onclick="placeOrder()">Bestellen</button>`;
 }
 
 function changeAmount(index, change) {
@@ -61,3 +62,12 @@ function changeAmount(index, change) {
   }
   renderBasket();
 }
+
+function placeOrder() {
+  basket.length = 0;
+  renderBasket();
+  document.getElementById("basketItems").innerHTML =
+    "<p>Testbestellung aufgeben.Danke </P>";
+}
+
+renderBasket();
