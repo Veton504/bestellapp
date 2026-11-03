@@ -82,3 +82,8 @@ aside {
   object-fit: cover;
   border: 4px solid white;
 }
+
+.content {
+  max-width: 1440px;
+  margin: 0 auto;
+}
