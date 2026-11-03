@@ -48,6 +48,9 @@ main {
 
 aside {
   width: 320px;
+  position: sticky;
+  top: 16px;
+  align-self: flex-start;
 }
 
 .order-button {
