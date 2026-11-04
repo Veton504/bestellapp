@@ -60,6 +60,13 @@ aside {
   border-radius: 8px;
 }
 
+.close-button {
+  width: auto;
+  height: auto;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
 .hero {
   position: relative;
   margin-bottom: 60px;
@@ -100,6 +107,8 @@ aside {
   .basket-button {
     display: block;
     position: fixed;
+    width: auto;
+    height: auto;
     bottom: 16px;
     left: 50%;
     transform: translateX(-50%);

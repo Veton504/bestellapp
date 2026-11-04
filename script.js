@@ -67,7 +67,20 @@ function placeOrder() {
   basket.length = 0;
   renderBasket();
   document.getElementById("basketItems").innerHTML =
-    "<p>Testbestellung aufgeben.Danke </P>";
+    "<p>Testbestellung aufgegeben. Danke!</p>";
 }
+
+const basketButton = document.getElementById("basket-button");
+const basketDialog = document.getElementById("basket-dialog");
+
+basketButton.onclick = function () {
+  basketDialog.showModal();
+};
+
+const closeButton = document.getElementById("close-dialog");
+
+closeButton.onclick = function () {
+  basketDialog.close();
+};
 
 renderBasket();
