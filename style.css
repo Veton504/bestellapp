@@ -87,3 +87,9 @@ aside {
   max-width: 1440px;
   margin: 0 auto;
 }
+
+@media (max-width: 900px) {
+  aside {
+    display: none;
+  }
+}
