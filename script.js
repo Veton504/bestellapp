@@ -56,6 +56,21 @@ function placeOrder() {
   document.getElementById("dialogItems").innerHTML = message;
 }
 
+function getBasketItemHtml(item, index) {
+  const sum = (item.price * item.amount).toFixed(2).replace(".", ",");
+  return `<p>${item.amount}x ${item.name} ${sum} € <button onclick="changeAmount(${index}, -1)">-</button> <button onclick="changeAmount(${index}, 1)">+</button> </p>`;
+}
+
+function getBasketSumsHtml(total) {
+  const fee = deliveryFee.toFixed(2).replace(".", ",");
+  const sum = (total + deliveryFee).toFixed(2).replace(".", ",");
+  return `
+    <p>Lieferkosten: ${fee} €</p>
+    <p>Gesamt: ${sum} €</p>
+    <button class="order-button" onclick="placeOrder()">Bestellen</button>
+  `;
+}
+
 function getBasketHtml() {
   if (basket.length === 0) {
     return "<p>Dein Warenkorb ist leer.</p>";
@@ -64,14 +79,10 @@ function getBasketHtml() {
   let html = "";
 
   for (let i = 0; i < basket.length; i++) {
-    const item = basket[i];
-    const sum = (item.price * item.amount).toFixed(2).replace(".", ",");
-    html += `<p>${item.amount}x ${item.name} ${sum} € <button onclick="changeAmount(${i}, -1)">-</button> <button onclick="changeAmount(${i}, 1)">+</button> </p>`;
-    total += item.price * item.amount;
+    html += getBasketItemHtml(basket[i], i);
+    total += basket[i].price * basket[i].amount;
   }
-  html += `<p>Lieferkosten: ${deliveryFee.toFixed(2).replace(".", ",")} €</p>`;
-  html += `<p>Gesamt: ${(total + deliveryFee).toFixed(2).replace(".", ",")} €</p>`;
-  html += `<button class="order-button" onclick="placeOrder()">Bestellen</button>`;
+  html += getBasketSumsHtml(total);
   return html;
 }
 
