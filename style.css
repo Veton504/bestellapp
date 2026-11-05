@@ -104,6 +104,10 @@ aside {
     display: none;
   }
 
+  footer {
+    padding-bottom: 80px;
+  }
+
   .basket-button {
     display: block;
     position: fixed;

@@ -50,9 +50,9 @@ function changeAmount(index, change) {
 
 function placeOrder() {
   basket.length = 0;
-  renderBasket();
-  document.getElementById("basketItems").innerHTML =
-    "<p>Testbestellung aufgegeben. Danke!</p>";
+  const message = "<p>Testbestellung aufgegeben. Danke!</p>";
+  document.getElementById("basketItems").innerHTML = message;
+  document.getElementById("dialogItems").innerHTML = message;
 }
 
 const basketButton = document.getElementById("basket-button");
