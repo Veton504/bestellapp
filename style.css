@@ -25,6 +25,7 @@ button {
   width: 36px;
   height: 36px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .price {
