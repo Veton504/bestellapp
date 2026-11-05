@@ -1,26 +1,26 @@
 const menu = document.getElementById("menu");
-menu.innerHTML = "";
-
 const basket = [];
 const deliveryFee = 5;
 
-for (let i = 0; i < myDishes.length; i++) {
-  const dish = myDishes[i];
+function renderMenu() {
+  menu.innerHTML = "";
+  for (let i = 0; i < myDishes.length; i++) {
+    menu.innerHTML += getDishHtml(myDishes[i], i);
+  }
+}
+
+function getDishHtml(dish, index) {
   const price = dish.price.toFixed(2).replace(".", ",");
-
-  menu.innerHTML += `
- 
- 
-
-  <article>
-    <div>
-      <h3>${dish.name}</h3>
-      <p>${dish.description}</p>
-      <span class="price">${price} €</span>
-    </div>
-    <button onclick="addToBasket(${i})">+</button>
-  </article>
-`;
+  return `
+    <article>
+      <div>
+        <h3>${dish.name}</h3>
+        <p>${dish.description}</p>
+        <span class="price">${price} €</span>
+      </div>
+      <button onclick="addToBasket(${index})">+</button>
+    </article>
+  `;
 }
 
 function addToBasket(index) {
@@ -40,6 +40,7 @@ function renderBasket() {
   document.getElementById("basketItems").innerHTML = html;
   document.getElementById("dialogItems").innerHTML = html;
 }
+
 function changeAmount(index, change) {
   basket[index].amount += change;
   if (basket[index].amount < 1) {
@@ -54,19 +55,6 @@ function placeOrder() {
   document.getElementById("basketItems").innerHTML = message;
   document.getElementById("dialogItems").innerHTML = message;
 }
-
-const basketButton = document.getElementById("basket-button");
-const basketDialog = document.getElementById("basket-dialog");
-
-basketButton.onclick = function () {
-  basketDialog.showModal();
-};
-
-const closeButton = document.getElementById("close-dialog");
-
-closeButton.onclick = function () {
-  basketDialog.close();
-};
 
 function getBasketHtml() {
   if (basket.length === 0) {
@@ -87,4 +75,17 @@ function getBasketHtml() {
   return html;
 }
 
+const basketButton = document.getElementById("basket-button");
+const basketDialog = document.getElementById("basket-dialog");
+const closeButton = document.getElementById("close-dialog");
+
+basketButton.onclick = function () {
+  basketDialog.showModal();
+};
+
+closeButton.onclick = function () {
+  basketDialog.close();
+};
+
+renderMenu();
 renderBasket();
