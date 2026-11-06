@@ -89,19 +89,20 @@ function getBasketSumsHtml(total) {
   `;
 }
 
+function getBasketItemsHtml() {
+  let html = "";
+  for (let i = 0; i < basket.length; i++) {
+    html += getBasketItemHtml(basket[i], i);
+  }
+  return html;
+}
+
 function getBasketHtml() {
   if (basket.length === 0) {
     return "<p>Dein Warenkorb ist leer.</p>";
   }
-  let total = 0;
-  let html = "";
-
-  for (let i = 0; i < basket.length; i++) {
-    html += getBasketItemHtml(basket[i], i);
-    total += basket[i].price * basket[i].amount;
-  }
-  html += getBasketSumsHtml(total);
-  return html;
+  const total = basket.reduce((sum, item) => sum + item.price * item.amount, 0);
+  return getBasketItemsHtml() + getBasketSumsHtml(total);
 }
 
 const basketButton = document.getElementById("basket-button");
