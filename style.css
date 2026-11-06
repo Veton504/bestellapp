@@ -124,6 +124,18 @@ aside {
   margin: 30px 0 10px 30px;
 }
 
+nav {
+  display: flex;
+  gap: 24px;
+  margin: 16px 30px;
+}
+
+nav a {
+  color: orange;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 @media (max-width: 900px) {
   aside {
     display: none;
@@ -157,5 +169,10 @@ aside {
     transform: translateX(-50%);
     padding: 12px 24px;
     border-radius: 24px;
+  }
+
+    nav {
+    gap: 12px;
+    margin: 16px 8px;
   }
 }
