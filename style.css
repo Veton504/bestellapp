@@ -24,6 +24,19 @@ article {
   align-items: center;
 }
 
+.dish-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.dish-info {
+  flex: 1;
+  margin: 0 16px;
+}
+
 button {
   background-color: orange;
   color: white;

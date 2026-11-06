@@ -13,7 +13,8 @@ function getDishHtml(dish, index) {
   const price = dish.price.toFixed(2).replace(".", ",");
   return `
     <article>
-      <div>
+      <img class="dish-image" src="${dish.image}" alt="${dish.name}" />
+      <div class="dish-info">
         <h3>${dish.name}</h3>
         <p>${dish.description}</p>
         <span class="price">${price} €</span>
