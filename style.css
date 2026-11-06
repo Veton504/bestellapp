@@ -129,6 +129,20 @@ aside {
     padding-bottom: 80px;
   }
 
+    .dish-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .dish-info {
+    margin: 0 8px;
+  }
+
+  article {
+    margin: 16px 0;
+    padding: 8px;
+  }
+
   .basket-button {
     display: block;
     position: fixed;
