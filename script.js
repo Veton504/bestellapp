@@ -1,11 +1,28 @@
 const menu = document.getElementById("menu");
 const basket = [];
 const deliveryFee = 5;
+const categories = ["Vorspeisen", "Hauptgerichte", "Getränke"];
+
+function getCategoryHtml(category) {
+  return `<h2 id="${category}">${category}</h2>`;
+}
+
+function getDishesByCategory(category) {
+  return myDishes.filter((dish) => dish.category === category);
+}
+
+function renderCategory(category) {
+  menu.innerHTML += getCategoryHtml(category);
+  const dishes = getDishesByCategory(category);
+  for (let i = 0; i < dishes.length; i++) {
+    menu.innerHTML += getDishHtml(dishes[i], myDishes.indexOf(dishes[i]));
+  }
+}
 
 function renderMenu() {
   menu.innerHTML = "";
-  for (let i = 0; i < myDishes.length; i++) {
-    menu.innerHTML += getDishHtml(myDishes[i], i);
+  for (let i = 0; i < categories.length; i++) {
+    renderCategory(categories[i]);
   }
 }
 
