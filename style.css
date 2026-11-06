@@ -8,6 +8,13 @@ header {
   padding: 16px;
 }
 
+footer {
+  background-color: orange;
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
+
 article {
   border: 1px solid gray;
   padding: 16px;
