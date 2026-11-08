@@ -148,6 +148,12 @@ nav a {
   margin-top: 12px;
 }
 
+.basket-icon {
+  display: block;
+  font-size: 64px;
+  margin-top: 24px;
+}
+
 @media (max-width: 900px) {
   aside {
     display: none;

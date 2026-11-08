@@ -100,9 +100,16 @@ function getBasketItemsHtml() {
   return html;
 }
 
+function getEmptyBasketHtml() {
+  return `
+    <p>Hier ist noch nichts.<br />Wähle etwas Leckeres aus!</p>
+    <span class="basket-icon">🛒</span>
+  `;
+}
+
 function getBasketHtml() {
   if (basket.length === 0) {
-    return "<p>Dein Warenkorb ist leer.</p>";
+    return getEmptyBasketHtml();
   }
   const total = basket.reduce((sum, item) => sum + item.price * item.amount, 0);
   return getBasketItemsHtml() + getBasketSumsHtml(total);
