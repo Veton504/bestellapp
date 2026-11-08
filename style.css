@@ -81,6 +81,10 @@ aside {
   border-radius: 16px;
 }
 
+aside h2 {
+  text-align: center;
+}
+
 .order-button {
   width: 100%;
   height: auto;
