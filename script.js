@@ -2,6 +2,9 @@ const menu = document.getElementById("menu");
 const basket = [];
 const deliveryFee = 5;
 const categories = ["Vorspeisen", "Hauptgerichte", "Getränke"];
+const basketButton = document.getElementById("basket-button");
+const basketDialog = document.getElementById("basket-dialog");
+const closeButton = document.getElementById("close-dialog");
 
 function getCategoryHtml(category) {
   return `<h2 id="${category}">${category}</h2>`;
@@ -104,10 +107,6 @@ function getBasketHtml() {
   const total = basket.reduce((sum, item) => sum + item.price * item.amount, 0);
   return getBasketItemsHtml() + getBasketSumsHtml(total);
 }
-
-const basketButton = document.getElementById("basket-button");
-const basketDialog = document.getElementById("basket-dialog");
-const closeButton = document.getElementById("close-dialog");
 
 basketButton.onclick = function () {
   basketDialog.showModal();
