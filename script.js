@@ -79,7 +79,14 @@ function placeOrder() {
 
 function getBasketItemHtml(item, index) {
   const sum = (item.price * item.amount).toFixed(2).replace(".", ",");
-  return `<p>${item.amount}x ${item.name} ${sum} € <button onclick="changeAmount(${index}, -1)">-</button> <button onclick="changeAmount(${index}, 1)">+</button> </p>`;
+  return `
+    <div class="basket-item">
+      <span>${item.amount}x ${item.name}</span>
+      <span>${sum} €</span>
+      <button onclick="changeAmount(${index}, -1)">-</button>
+      <button onclick="changeAmount(${index}, 1)">+</button>
+    </div>
+  `;
 }
 
 function getBasketSumsHtml(total) {

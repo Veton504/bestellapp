@@ -154,6 +154,17 @@ nav a {
   margin-top: 24px;
 }
 
+.basket-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fbe9dc;
+  color: #333;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
 @media (max-width: 900px) {
   aside {
     display: none;
