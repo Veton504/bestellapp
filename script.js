@@ -97,8 +97,8 @@ function getBasketSumsHtml(total) {
   const fee = deliveryFee.toFixed(2).replace(".", ",");
   const sum = (total + deliveryFee).toFixed(2).replace(".", ",");
   return `
-    <p>Lieferkosten: ${fee} €</p>
-    <p>Gesamt: ${sum} €</p>
+    <div class="sum-row"><span>Lieferkosten</span><span>${fee} €</span></div>
+    <div class="sum-row total"><span>Gesamt</span><span>${sum} €</span></div>
     <button class="order-button" onclick="placeOrder()">Bestellen</button>
   `;
 }
