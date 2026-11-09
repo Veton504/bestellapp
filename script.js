@@ -82,9 +82,13 @@ function getBasketItemHtml(item, index) {
   return `
     <div class="basket-item">
       <span>${item.amount}x ${item.name}</span>
-      <span>${sum} €</span>
-      <button onclick="changeAmount(${index}, -1)">-</button>
-      <button onclick="changeAmount(${index}, 1)">+</button>
+      <div class="basket-item-row">
+        <div>
+          <button onclick="changeAmount(${index}, -1)">-</button>
+          <button onclick="changeAmount(${index}, 1)">+</button>
+        </div>
+        <span>${sum} €</span>
+      </div>
     </div>
   `;
 }

@@ -155,14 +155,19 @@ nav a {
 }
 
 .basket-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: left;
   background-color: #fbe9dc;
   color: #333;
   border-radius: 12px;
   padding: 12px;
   margin-bottom: 12px;
+}
+
+.basket-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
 }
 
 @media (max-width: 900px) {
