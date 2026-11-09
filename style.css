@@ -17,7 +17,8 @@ footer {
 }
 
 article {
-  border: 1px solid gray;
+  background-color: #fbe9dc;
+  border-radius: 12px;
   padding: 16px;
   margin: 16px;
   display: flex;
