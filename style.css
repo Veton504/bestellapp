@@ -191,6 +191,14 @@ nav a {
   margin: 32px 0;
 }
 
+dialog {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  text-align: center;
+}
+
 @media (max-width: 900px) {
   aside {
     display: none;
