@@ -4,13 +4,13 @@ body {
 }
 
 header {
-  background-color: orange;
+  background-color: #e8701a;
   color: white;
   padding: 16px;
 }
 
 footer {
-  background-color: orange;
+  background-color: #e8701a;
   color: white;
   padding: 16px;
   text-align: center;
@@ -40,7 +40,7 @@ article {
 }
 
 button {
-  background-color: orange;
+  background-color: #e8701a;
   color: white;
   border: none;
   border-radius: 50%;
@@ -134,7 +134,7 @@ aside {
 #menu h2 {
   margin: 30px 0 10px 0;
   padding: 10px 30px;
-  background-color: orange;
+  background-color: #e8701a;
   color: white;
 }
 
@@ -145,7 +145,7 @@ nav {
 }
 
 nav a {
-  color: orange;
+  color: #e8701a;
   font-weight: bold;
   text-decoration: none;
 }
