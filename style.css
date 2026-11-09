@@ -94,6 +94,7 @@ aside {
   height: auto;
   padding: 8px 16px;
   border-radius: 8px;
+  margin-top: 12px;
 }
 
 .hero {
@@ -144,10 +145,6 @@ nav a {
   text-decoration: none;
 }
 
-.close-button {
-  margin-top: 12px;
-}
-
 .basket-icon {
   display: block;
   font-size: 64px;
@@ -168,6 +165,18 @@ nav a {
   justify-content: space-between;
   align-items: center;
   margin-top: 8px;
+}
+
+.sum-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.total {
+  border-top: 1px solid white;
+  padding-top: 8px;
+  font-weight: bold;
 }
 
 @media (max-width: 900px) {
