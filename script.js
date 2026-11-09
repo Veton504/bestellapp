@@ -72,7 +72,9 @@ function changeAmount(index, change) {
 
 function placeOrder() {
   basket.length = 0;
-  const message = "<p>Testbestellung aufgegeben. Danke!</p>";
+  const message = `
+    <p class="order-message">🚚<br />Bestellung bestätigt!<br />Dein Essen ist unterwegs.</p>
+  `;
   document.getElementById("basketItems").innerHTML = message;
   document.getElementById("dialogItems").innerHTML = message;
 }
