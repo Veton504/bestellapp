@@ -74,7 +74,7 @@ aside {
   position: sticky;
   top: 16px;
   align-self: flex-start;
-  max-height: calc(100vh - 32px);
+  max-height: 70vh;
   display: flex;
   flex-direction: column;
   background-color: #333;
