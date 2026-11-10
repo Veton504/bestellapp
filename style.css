@@ -75,12 +75,31 @@ aside {
   top: 16px;
   align-self: flex-start;
   max-height: calc(100vh - 32px);
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
   background-color: #333;
   color: white;
   padding: 16px;
   border-radius: 16px;
   text-align: center;
+}
+
+.basket-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.basket-sums {
+  flex-shrink: 0;
+}
+
+#basketItems,
+#dialogItems {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
 }
 
 .order-button {
@@ -97,6 +116,7 @@ aside {
   padding: 8px 16px;
   border-radius: 8px;
   margin-top: 12px;
+  align-self: center;
 }
 
 .hero {
@@ -197,6 +217,16 @@ dialog {
   border: none;
   border-radius: 16px;
   text-align: center;
+  box-sizing: border-box;
+  width: calc(100vw - 32px);
+  max-width: 400px;
+  max-height: calc(100vh - 32px);
+  padding: 16px;
+}
+
+dialog[open] {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 900px) {

@@ -125,7 +125,10 @@ function getBasketHtml() {
     return getEmptyBasketHtml();
   }
   const total = basket.reduce((sum, item) => sum + item.price * item.amount, 0);
-  return getBasketItemsHtml() + getBasketSumsHtml(total);
+  return `
+    <div class="basket-list">${getBasketItemsHtml()}</div>
+    <div class="basket-sums">${getBasketSumsHtml(total)}</div>
+  `;
 }
 
 basketButton.onclick = function () {
