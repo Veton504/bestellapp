@@ -166,7 +166,7 @@ section {
 nav {
   display: flex;
   gap: 24px;
-  margin: 16px 30px;
+  margin: 16px;
 }
 
 nav a {
@@ -271,6 +271,6 @@ dialog[open] {
 
   nav {
     gap: 12px;
-    margin: 16px 8px;
+    margin: 16px;
   }
 }
