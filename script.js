@@ -5,6 +5,8 @@ const categories = ["Vorspeisen", "Hauptgerichte", "Getränke"];
 const basketButton = document.getElementById("basket-button");
 const basketDialog = document.getElementById("basket-dialog");
 const closeButton = document.getElementById("close-dialog");
+const orderDialog = document.getElementById("order-dialog");
+const closeOrder = document.getElementById("close-order");
 
 function getCategoryHtml(category) {
   return `<h2 id="${category}">${category}</h2>`;
@@ -72,11 +74,9 @@ function changeAmount(index, change) {
 
 function placeOrder() {
   basket.length = 0;
-  const message = `
-    <p class="order-message">🚚<br />Bestellung bestätigt!<br />Dein Essen ist unterwegs.</p>
-  `;
-  document.getElementById("basketItems").innerHTML = message;
-  document.getElementById("dialogItems").innerHTML = message;
+  renderBasket();
+  basketDialog.close();
+  orderDialog.showModal();
 }
 
 function getBasketItemHtml(item, index) {
@@ -137,6 +137,10 @@ basketButton.onclick = function () {
 
 closeButton.onclick = function () {
   basketDialog.close();
+};
+
+closeOrder.onclick = function () {
+  orderDialog.close();
 };
 
 renderMenu();

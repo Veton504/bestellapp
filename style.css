@@ -75,6 +75,7 @@ aside {
   position: sticky;
   top: 16px;
   align-self: flex-start;
+  margin-top: 30px;
   max-height: 70vh;
   display: flex;
   flex-direction: column;
@@ -213,7 +214,7 @@ nav a {
   font-size: 20px;
   font-weight: bold;
   line-height: 1.6;
-  margin: 32px 0;
+  margin: 16px 0 0;
 }
 
 dialog {
@@ -232,6 +233,23 @@ dialog {
 dialog[open] {
   display: flex;
   flex-direction: column;
+}
+
+#order-dialog {
+  position: fixed;
+  max-width: 320px;
+  padding: 32px 24px 24px;
+}
+
+.close-x {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  font-size: 24px;
+  line-height: 1;
 }
 
 @media (max-width: 900px) {
