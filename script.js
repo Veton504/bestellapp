@@ -39,9 +39,11 @@ function getDishHtml(dish, index) {
       <div class="dish-info">
         <h3>${dish.name}</h3>
         <p>${dish.description}</p>
-        <span class="price">${price} €</span>
       </div>
-      <button onclick="addToBasket(${index})">+</button>
+      <div class="dish-side">
+        <span class="price">${price} €</span>
+        <button onclick="addToBasket(${index})">+</button>
+      </div>
     </article>
   `;
 }

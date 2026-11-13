@@ -23,7 +23,7 @@ article {
   margin: 16px 0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
 }
 
 .dish-image {
@@ -32,11 +32,21 @@ article {
   object-fit: cover;
   border-radius: 8px;
   flex-shrink: 0;
+  align-self: center;
 }
 
 .dish-info {
   flex: 1;
   margin: 0 16px;
+  align-self: center;
+}
+
+.dish-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-shrink: 0;
 }
 
 button {
