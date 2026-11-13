@@ -79,6 +79,11 @@ function placeOrder() {
   orderDialog.showModal();
 }
 
+function getMinusButtonHtml(item, index) {
+  const symbol = item.amount === 1 ? "🗑" : "-";
+  return `<button onclick="changeAmount(${index}, -1)">${symbol}</button>`;
+}
+
 function getBasketItemHtml(item, index) {
   const sum = (item.price * item.amount).toFixed(2).replace(".", ",");
   return `
@@ -86,7 +91,7 @@ function getBasketItemHtml(item, index) {
       <span>${item.amount}x ${item.name}</span>
       <div class="basket-item-row">
         <div>
-          <button onclick="changeAmount(${index}, -1)">-</button>
+          ${getMinusButtonHtml(item, index)}
           <button onclick="changeAmount(${index}, 1)">+</button>
         </div>
         <span>${sum} €</span>
