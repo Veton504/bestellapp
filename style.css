@@ -208,6 +208,10 @@ nav a {
   margin-top: 8px;
 }
 
+.basket-item-row button {
+  font-size: 18px;
+}
+
 .sum-row {
   display: flex;
   justify-content: space-between;
